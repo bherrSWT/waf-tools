@@ -164,8 +164,8 @@ def mkspec_set_clang_cxxflags(conf, force_debug=False):
     if conf.has_tool_option('cxx_nodebug'):
         conf.env['DEFINES'] += ['NDEBUG']
 
-    # Use the C++14 language features
-    conf.env['CXXFLAGS'] += ['-std=c++14']
+    # Use the C++17 language features
+    conf.env['CXXFLAGS'] += ['-std=c++17']
 
     # Use clang's own C++ standard library on Mac OSX and iOS
     # Add other platforms when the library becomes stable there

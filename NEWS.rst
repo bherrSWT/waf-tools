@@ -6,7 +6,7 @@ of every change, see the Git log.
 
 Latest
 ------
-* tbd
+* Minor: Enabled the -std=c++17 flag for msvc, clang and g++.
 
 4.27.0
 ------
