@@ -124,7 +124,7 @@ def mkspec_set_msvc_flags(conf):
          '/EHs', '/D_WIN32_WINNT=0x0501', '/bigobj']
 
     # Use the C++17 language features
-    conf.env['CXXFLAGS'] += ['-std:c++17']
+    conf.env['CXXFLAGS'] += ['/std:c++17']
 
     # Do not generate .manifest files (the /MANIFEST flag is added by waf)
     conf.env['LINKFLAGS'].remove('/MANIFEST')
