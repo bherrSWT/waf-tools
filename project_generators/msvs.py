@@ -1109,7 +1109,6 @@ class msvs_2012_generator(msvs_generator):
 
 
 class msvs_2017_generator(msvs_generator):
-
     '''generates a Visual Studio 2017 solution'''
     cmd = 'msvs2017'
     fun = msvs_generator.fun
@@ -1124,5 +1123,24 @@ class msvs_2017_generator(msvs_generator):
         if not getattr(self, 'solution_name', None):
             self.solution_name = getattr(
                 Context.g_module, Context.APPNAME, 'project') + '_2017.sln'
+
+        msvs_generator.init(self)
+
+
+class msvs_2019_generator(msvs_generator):
+    '''generates a Visual Studio 2017 solution'''
+    cmd = 'msvs2019'
+    fun = msvs_generator.fun
+
+    def init(self):
+        self.numver = '12.00'
+        self.vsver = '16'
+        self.platformver = 'v142'
+
+        if not getattr(self, 'project_extension', None):
+            self.project_extension = '_2019.vcxproj'
+        if not getattr(self, 'solution_name', None):
+            self.solution_name = getattr(
+                Context.g_module, Context.APPNAME, 'project') + '_2019.sln'
 
         msvs_generator.init(self)
